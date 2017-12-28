@@ -20,9 +20,30 @@ class Home extends Component {
     }
   }
 
+  componentWillMount() {
+    var data = People.getPeople();
+    this.setState({
+      firstNames: String(data[0]).split(','),
+      lastNames: String(data[1]).split(','),
+      ages: String(data[2]).split(',')
+    });
+    console.log(typeof data);
+    console.log(data);
+  }
 
   render() {
 
+    let TableRows = []
+
+    _.each(this.state.firstNames, (value, index) => {
+      TableRows.push(
+        <tr key={index}>
+          <td>{web3.toAscii(this.state.firstNames[index])}</td>
+          <td>{web3.toAscii(this.state.lastNames[index])}</td>
+          <td>{this.state.ages[index]}</td>
+        </tr>
+      )
+    })
 
 
     return(
