@@ -9,7 +9,7 @@ let ABI = require('../../../abi/PeopleABI.js');
 let peopleAddress = '0x345ca3e014aaf5dca488057592ee47305d9b3e10';
 let People = web3.eth.contract(ABI).at(peopleAddress);
 web3.eth.defaultAccount = web3.eth.accounts[0];
-let balance = web3.fromWei(web3.eth.getBalance(web3.eth.coinbase)).toString();
+let balance;
 
 class Home extends Component {
   constructor(props){
@@ -20,6 +20,7 @@ class Home extends Component {
       ages: [],
     }
     this.getPeople = this.getPeople.bind(this);
+    this.getBalance = this.getBalance.bind(this);
   }
 
   getPeople = () => {
@@ -31,8 +32,13 @@ class Home extends Component {
     });
   }
 
+  getBalance = () => {
+    balance = web3.fromWei(web3.eth.getBalance(web3.eth.coinbase)).toString();
+  }
+
   componentWillMount() {
     this.getPeople();
+    this.getBalance();
   }
 
   render() {
@@ -45,11 +51,14 @@ class Home extends Component {
       margin: "5px auto",
       border: "5px solid white",
     }
+    const BalanceStyle={
+      color: "white"
+    }
 
     return(
       <main className="container" style={MainStyle}>
-        <Form getPeople={this.getPeople} />
-        <p>ETH = {balance}</p>
+        <Form getPeople={this.getPeople} getBalance={this.getBalance}/>
+        <p style={BalanceStyle}>ETH = {balance}</p>
         <Table key={1} firstNames={this.state.firstNames} lastNames={this.state.lastNames} ages={this.state.ages} />
       </main>
     )

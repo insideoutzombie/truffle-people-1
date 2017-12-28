@@ -38,6 +38,7 @@ class Form extends Component {
       age: '',
     });
     this.props.getPeople();
+    this.props.getBalance();
   }
 
   render() {
