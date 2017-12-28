@@ -14,14 +14,15 @@ export default class Table extends Component{
       border: "5px solid white",
     }
     const CellStyle={
-      width: "200px"
+      width: "200px",
+      textAlign: "center"
     }
 
     let TableRows = []
 
     _.each(this.props.firstNames, (value, index) => {
       TableRows.push(
-        <tr key={index}>
+        <tr key={index} style={CellStyle}>
           <td>{web3.toAscii(this.props.firstNames[index])}</td>
           <td>{web3.toAscii(this.props.lastNames[index])}</td>
           <td>{this.props.ages[index]}</td>
