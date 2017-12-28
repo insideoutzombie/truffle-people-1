@@ -19,9 +19,10 @@ class Home extends Component {
       lastNames: [],
       ages: [],
     }
+    this.getPeople = this.getPeople.bind(this);
   }
 
-  componentWillMount() {
+  getPeople = () => {
     var data = People.getPeople();
     this.setState({
       firstNames: String(data[0]).split(','),
@@ -32,12 +33,23 @@ class Home extends Component {
     console.log(data);
   }
 
+  componentWillMount() {
+    this.getPeople();
+  }
+
   render() {
+    const MainStyle={
+      backgroundColor: "blue",
+      color: "black",
+      margin: "5px auto",
+      border: "5px solid white",
+    }
+
     return(
-      <main className="container">
-        <Form />
+      <main className="container" style={MainStyle}>
+        <Form getPeople={this.getPeople} />
         <p>ETH = {balance}</p>
-        <Table key={1} firstNames={this.state.firstNames} lastNames={this.state.lastNames} ages={this.state.ages}/>
+        <Table key={1} firstNames={this.state.firstNames} lastNames={this.state.lastNames} ages={this.state.ages} />
       </main>
     )
   }

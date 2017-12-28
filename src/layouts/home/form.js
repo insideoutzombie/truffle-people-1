@@ -35,15 +35,12 @@ class Form extends Component {
     console.log(payload);
     console.log(web3.eth.defaultAccount);
     People.addPerson(payload1, payload2, payload3, {from: web3.eth.accounts[0], gas: 3000000})
-    // .then(function(result){
-    //   console.log(result);
-    // });
     this.setState({
       firstName: '',
       lastName: '',
       age: '',
     });
-    // this.props.updateTransactionTime();
+    this.props.getPeople();
   }
 
   render() {
