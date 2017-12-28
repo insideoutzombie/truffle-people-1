@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Web3 from 'web3';
 import Form from './form.js';
 import _ from 'lodash';
+import Table from './table.js'
 
 let web3 = new Web3(new Web3.providers.HttpProvider("http://localhost:9545"))
 let ABI = require('../../../abi/PeopleABI.js');
@@ -32,38 +33,11 @@ class Home extends Component {
   }
 
   render() {
-
-    let TableRows = []
-
-    _.each(this.state.firstNames, (value, index) => {
-      TableRows.push(
-        <tr key={index}>
-          <td>{web3.toAscii(this.state.firstNames[index])}</td>
-          <td>{web3.toAscii(this.state.lastNames[index])}</td>
-          <td>{this.state.ages[index]}</td>
-        </tr>
-      )
-    })
-
-
     return(
       <main className="container">
         <Form />
         <p>ETH = {balance}</p>
-        <div className="App-table-div">
-              <table className="App-table">
-                <thead>
-                  <tr>
-                    <th>First Name</th>
-                    <th>Last Name</th>
-                    <th>Age</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {TableRows}
-                </tbody>
-              </table>
-          </div>
+        <Table key={1} firstNames={this.state.firstNames} lastNames={this.state.lastNames} ages={this.state.ages}/>
       </main>
     )
   }
