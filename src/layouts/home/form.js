@@ -31,9 +31,6 @@ class Form extends Component {
     var payload1 = web3.fromAscii(this.state.firstName,32);
     var payload2 = web3.fromAscii(this.state.lastName,32);
     var payload3 = web3.toBigNumber(this.state.age);
-    var payload = ("'" + payload1 + "','" + payload2 + "',"+ payload3);
-    console.log(payload);
-    console.log(web3.eth.defaultAccount);
     People.addPerson(payload1, payload2, payload3, {from: web3.eth.accounts[0], gas: 3000000})
     this.setState({
       firstName: '',

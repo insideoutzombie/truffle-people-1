@@ -29,8 +29,6 @@ class Home extends Component {
       lastNames: String(data[1]).split(','),
       ages: String(data[2]).split(',')
     });
-    console.log(typeof data);
-    console.log(data);
   }
 
   componentWillMount() {
