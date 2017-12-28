@@ -13,6 +13,9 @@ export default class Table extends Component{
       margin: "5px auto",
       border: "5px solid white",
     }
+    const CellStyle={
+      width: "200px"
+    }
 
     let TableRows = []
 
@@ -31,9 +34,9 @@ export default class Table extends Component{
             <table className="App-table">
               <thead style={TableStyle}>
                 <tr>
-                  <th>First Name</th>
-                  <th>Last Name</th>
-                  <th>Age</th>
+                  <th style={CellStyle}>First Name</th>
+                  <th style={CellStyle}>Last Name</th>
+                  <th style={CellStyle}>Age</th>
                 </tr>
               </thead>
               <tbody style={TableStyle}>
