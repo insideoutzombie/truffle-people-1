@@ -37,6 +37,9 @@ class Home extends Component {
 
   render() {
     const MainStyle={
+      display: "flex",
+      flexDirection: "column",
+      alignItems: "center",
       backgroundColor: "blue",
       color: "black",
       margin: "5px auto",
