@@ -8,7 +8,7 @@ export default class Table extends Component{
 
   render(){
     const TableStyle={
-      backgroundColor: "blue",
+      backgroundColor: '#00A000',
       color: "white",
       margin: "5px auto",
       border: "5px solid white",
