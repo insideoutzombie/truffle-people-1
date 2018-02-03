@@ -11,7 +11,7 @@ export default class CssTable extends Component{
 
     }
     const CellStyle={
-      color: '#2ECC40',
+      color: 'black',
       animationName: 'toCollapsed',
       animationDuration: '1s',
       msTransform: 'rotate(0deg)', /* IE 9 */
@@ -20,7 +20,7 @@ export default class CssTable extends Component{
       width: '350px',
       textAlign: 'center',
       border: '1px solid yellow',
-      backgroundColor: 'black',
+      backgroundColor: 'white',
       borderStyle: 'solid',
       borderWidth: '5px',
       borderRadius: '5px',
