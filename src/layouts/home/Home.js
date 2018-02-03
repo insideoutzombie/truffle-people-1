@@ -3,7 +3,8 @@ import Web3 from 'web3';
 import Form from './form.js';
 import _ from 'lodash';
 import Table from './table.js';
-import agGrid from './Ag-table.js'
+import agGrid from './Ag-table.js';
+import CssTable from './Css-Table.js';
 
 let web3 = new Web3(new Web3.providers.HttpProvider("http://localhost:9545"))
 let ABI = require('../../../abi/PeopleABI.js');
@@ -62,6 +63,8 @@ class Home extends Component {
         <p style={BalanceStyle}>ETH = {balance}</p>
         <Table key={1} firstNames={this.state.firstNames} lastNames={this.state.lastNames} ages={this.state.ages} />
         <agGrid />
+        <hr />
+        <CssTable key={2} firstNames={this.state.firstNames} lastNames={this.state.lastNames} ages={this.state.ages}/>
       </main>
     )
   }
