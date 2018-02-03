@@ -49,8 +49,12 @@
     "whatwg-fetch": "1.0.0"
   },
   "dependencies": {
+    "ag-grid": "^16.0.1",
+    "ag-grid-react": "^16.0.0",
+    "gulp": "^3.9.1",
     "react": "^15.4.2",
     "react-dom": "^15.4.2",
+    "react-dom-factories": "^1.0.2",
     "react-redux": "^5.0.2",
     "react-router": "^3.0.2",
     "react-router-redux": "^4.0.7",
@@ -103,5 +107,20 @@
   },
   "eslintConfig": {
     "extends": "react-app"
-  }
+  },
+  "description": "truffle-people",
+  "main": "truffle-config.js",
+  "directories": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/insideoutzombie/truffle-people-1.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/insideoutzombie/truffle-people-1/issues"
+  },
+  "homepage": "https://github.com/insideoutzombie/truffle-people-1#readme"
 }
